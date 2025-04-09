@@ -3,11 +3,11 @@
 #include <time.h>
 
 int main() {
-    // Initialisation du générateur aléatoire
+    // Initialisation du gï¿½nï¿½rateur alï¿½atoire
     srand(time(NULL));
 
     // === Test de calculs avec boucles et random ===
-    printf("== Boucles avec opérations aléatoires ==\n");
+    printf("== Boucles avec opï¿½rations alï¿½atoires ==\n");
 
     clock_t start = clock();
 
@@ -21,29 +21,29 @@ int main() {
     clock_t end = clock();
     double elapsed = (double)(end - start) / CLOCKS_PER_SEC;
 
-    printf("Résultat final : %lld\n", total);
-    printf("Temps d'exécution : %.2f secondes\n\n", elapsed);
+    printf("Rï¿½sultat final : %lld\n", total);
+    printf("Temps d'exï¿½cution : %.2f secondes\n\n", elapsed);
 
     // === Test de lecture de fichier entier ===
-    printf("== Lecture complète du fichier ==\n");
+    printf("== Lecture complï¿½te du fichier ==\n");
 
     start = clock();
 
-    FILE *f = fopen("test.txt", "rb"); // lecture binaire pour éviter les problèmes d'encodage
+    FILE *f = fopen("FichierTest.txt", "rb"); // lecture binaire pour ï¿½viter les problï¿½mes d'encodage
     if (!f) {
         perror("Erreur d'ouverture de FichierTest.txt");
         return 1;
     }
 
-    // Aller à la fin pour connaître la taille
+    // Aller ï¿½ la fin pour connaï¿½tre la taille
     fseek(f, 0, SEEK_END);
     long taille = ftell(f);
-    rewind(f); // retour au début
+    rewind(f); // retour au dï¿½but
 
     // Allouer un buffer et lire le fichier
     char *contenu = malloc(taille + 1);
     if (!contenu) {
-        perror("Erreur d'allocation mémoire");
+        perror("Erreur d'allocation mï¿½moire");
         fclose(f);
         return 1;
     }
@@ -56,7 +56,7 @@ int main() {
     end = clock();
     elapsed = (double)(end - start) / CLOCKS_PER_SEC;
 
-    printf("Lecture terminée. Taille : %ld caractères\n", taille);
+    printf("Lecture terminï¿½e. Taille : %ld caractï¿½res\n", taille);
     printf("Temps de lecture : %.2f secondes\n", elapsed);
 
     free(contenu);
