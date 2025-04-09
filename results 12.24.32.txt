@@ -1,0 +1,6 @@
+Boucles for imbriquées :
+Temps d'exécution : 0.05 secondes
+
+Lecture de fichier :
+Lecture terminée. Taille : 3689401 caractères
+Temps de lecture : 0.0 secondes
