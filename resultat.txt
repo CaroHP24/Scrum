@@ -1,0 +1,4 @@
+Résultat final : 249505255018
+Temps d'exécution : 1.02 secondes
+Lecture terminée. Taille : 3689400 caractères
+Temps de lecture : 0.00 secondes
