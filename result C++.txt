@@ -1,0 +1,15 @@
+Boucle:
+Testing nested loops performance...
+
+Temps d'exécution : 1.71405 secondes
+
+
+----------------------------------------
+
+Lire le fichier:
+
+Testing file reading performance...
+
+Lecture terminée.
+
+Temps de lecture : 0.164256 secondes
