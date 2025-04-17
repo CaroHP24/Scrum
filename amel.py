@@ -17,7 +17,6 @@ def clean_and_prepare_dirs():
 
 # ========== CONVERSION PDF --> TEXTE ==========
 def convert_pdf_to_text():
-    pdftotext_path = "C:\\xpdf-tools-win-4.05\\bin64\\pdftotext.exe"  # chemin complet vers l’exécutable pdftotext
 
     # parcourir les fichiers du dossier PDF_INPUT_DIR, et garder uniquement les .pdf
     pdf_files = [
@@ -36,7 +35,7 @@ def convert_pdf_to_text():
         txt_path = os.path.join(TMP_TXT_DIR, txt_name)     # Chemin complet du fichier texte à créer
 
         try:
-            subprocess.run([pdftotext_path, "-raw", pdf_path, txt_path], check=True)  # conversion
+            subprocess.run(["pdftotext", "-raw", pdf_path, txt_path], check=True)  # conversion
             print(f"Converti : {pdf_file}")
         except subprocess.CalledProcessError as e:
             print(f"Erreur de conversion pour {pdf_file} : {e}")
