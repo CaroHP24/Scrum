@@ -20,12 +20,10 @@ The system takes as input a folder containing PDF files and creates an output fo
 
 ## Installation
 
-To push an existing repository from the command line:
+Clone the repository:
 
 ```bash
-git remote add origin git@github.com:CaroHP24/Scrum.git
-git branch -M Dev
-git push -u origin Dev
+git clone https://github.com/CaroHP24/Scrum.git
 ```
 
 Install the necessary dependencies:
@@ -36,11 +34,10 @@ sudo apt-get install poppler-utils  # For the pdftotext utility
 
 ## Project Structure
 ```text
-├── amel.py         # Input/output management and PDF→TXT conversion
+├── main.py         # Input/output management and PDF→TXT conversion
 ├── extraction.py   # Title and abstract extraction
 ├── generation.py   # Creation of formatted output files
 ├── deleteTmp.py    # Deletes the temporary directory used during processing
-├── main.py         # Main script integrating all functions
 ├── pdf_input/      # Folder for input PDF files
 └── final_output/   # Folder for output TXT files
 ```
