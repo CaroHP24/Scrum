@@ -35,7 +35,7 @@ sudo apt-get install poppler-utils  # For the pdftotext utility
 ```
 
 ## Project Structure
-
+```text
 ├── amel.py         # Input/output management and PDF→TXT conversion
 ├── extraction.py   # Title and abstract extraction
 ├── generation.py   # Creation of formatted output files
@@ -43,7 +43,7 @@ sudo apt-get install poppler-utils  # For the pdftotext utility
 ├── main.py         # Main script integrating all functions
 ├── pdf_input/      # Folder for input PDF files
 └── final_output/   # Folder for output TXT files
-
+```
 ## Usage
 
 Place your PDF files in the `pdf_input/` folder.
@@ -58,11 +58,12 @@ Retrieve the results from the final_output/ folder
 
 # Detailed Operation
 1. **Input/Output Management (amel.py)**
+
 This module handles:
 
-Preparing the working directories
-Converting PDFs to temporary text files
-Coordinating the final processing
++Preparing the working directories
++Converting PDFs to temporary text files
++Coordinating the final processing
 
 **Main functions:**
 
@@ -71,6 +72,7 @@ Coordinating the final processing
 -final_treatement(): Applies final processing and generates output files
 
 2. **Information Extraction (extraction.py)**
+
 This module analyzes text files to extract relevant information.
 
 **Main functions:**
@@ -81,6 +83,7 @@ This module analyzes text files to extract relevant information.
 +extract_abstract(): Extracts the article abstract
 
 3. **Output File Generation (generation.py)**
+
 This module creates the final text files with the required format.
 
 **Main functions:**
@@ -89,6 +92,7 @@ This module creates the final text files with the required format.
 +create_txt(): Generates the final text file with structured information
 
 4. **Temporary Directory Cleanup (deleteTmp.py)**
+
 This module deletes the temporary directory (pdf_input/tmp_txt) used during processing.
 
 **Main function:**
