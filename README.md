@@ -57,7 +57,7 @@ python3 main.py
 Retrieve the results from the final_output/ folder
 
 # Detailed Operation
-1. Input/Output Management (amel.py)
+1. **Input/Output Management (amel.py)**
 This module handles:
 
 Preparing the working directories
@@ -70,7 +70,7 @@ Coordinating the final processing
 -convert_pdf_to_text(): Converts PDFs to plain text
 -final_treatement(): Applies final processing and generates output files
 
-2. Information Extraction (extraction.py)
+2. **Information Extraction (extraction.py)**
 This module analyzes text files to extract relevant information.
 
 **Main functions:**
@@ -80,7 +80,7 @@ This module analyzes text files to extract relevant information.
 +extract_title(): Extracts the article title
 +extract_abstract(): Extracts the article abstract
 
-3. Output File Generation (generation.py)
+3. **Output File Generation (generation.py)**
 This module creates the final text files with the required format.
 
 **Main functions:**
@@ -88,7 +88,7 @@ This module creates the final text files with the required format.
 +parse_filename(): Formats the filename (replaces spaces with underscores)
 +create_txt(): Generates the final text file with structured information
 
-4. Temporary Directory Cleanup (deleteTmp.py)
+4. **Temporary Directory Cleanup (deleteTmp.py)**
 This module deletes the temporary directory (pdf_input/tmp_txt) used during processing.
 
 **Main function:**
