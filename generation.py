@@ -8,8 +8,7 @@ def parse_filename(filename):
     Returns:
         output (str): The filename with spaces replaced by underscores.
     """
-    return filename.replace(' ', '_').replace('.pdf', '')+'.txt'
-
+    return filename.replace(' ', '_')
 
 def create_txt(input_filename,title,abstract,output_filename):
     """

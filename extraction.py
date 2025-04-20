@@ -71,3 +71,28 @@ def extract_abstract(lines):
             abstract_lines.append(clean_line)
 
     return " ".join(abstract_lines).strip() if abstract_lines else "(Résumé non trouvé)"
+
+
+# Fonction pour extraire le titre à partir d'un chemin de fichier
+def extract_title_from_file(filepath):
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+        return extract_title(lines)
+    except FileNotFoundError:
+        return "Fichier non trouvé."
+    except Exception as e:
+        return f"Erreur lors de la lecture : {e}"
+    
+# Fonction pour extraire le résumé à partir d'un chemin de fichier
+
+def extract_abstract_from_file(filepath):
+    try: 
+        with open(filepath, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+        return extract_abstract(lines)
+    except FileNotFoundError:
+        return "Fichier non trouvé."
+    except Exception as e:
+        return f"Erreur lors de la lecture : {e}"
+# Fonction pour extraire le titre et le résumé à partir d'un chemin de fichier
