@@ -61,15 +61,15 @@ Retrieve the results from the final_output/ folder
 
 This module handles:
 
-+Preparing the working directories
-+Converting PDFs to temporary text files
-+Coordinating the final processing
++ Preparing the working directories
++ Converting PDFs to temporary text files
++ Coordinating the final processing
 
 **Main functions:**
 
--clean_and_prepare_dirs(): Cleans and prepares the working directories
--convert_pdf_to_text(): Converts PDFs to plain text
--final_treatement(): Applies final processing and generates output files
+- clean_and_prepare_dirs(): Cleans and prepares the working directories
+- convert_pdf_to_text(): Converts PDFs to plain text
+- final_treatement(): Applies final processing and generates output files
 
 2. **Information Extraction (extraction.py)**
 
@@ -77,10 +77,10 @@ This module analyzes text files to extract relevant information.
 
 **Main functions:**
 
-+is_affiliation_line(): Detects lines containing affiliations
-+is_likely_author(): Identifies lines likely containing authors
-+extract_title(): Extracts the article title
-+extract_abstract(): Extracts the article abstract
++ is_affiliation_line(): Detects lines containing affiliations
++ is_likely_author(): Identifies lines likely containing authors
++ extract_title(): Extracts the article title
++ extract_abstract(): Extracts the article abstract
 
 3. **Output File Generation (generation.py)**
 
@@ -88,8 +88,8 @@ This module creates the final text files with the required format.
 
 **Main functions:**
 
-+parse_filename(): Formats the filename (replaces spaces with underscores)
-+create_txt(): Generates the final text file with structured information
++ parse_filename(): Formats the filename (replaces spaces with underscores)
++ create_txt(): Generates the final text file with structured information
 
 4. **Temporary Directory Cleanup (deleteTmp.py)**
 
@@ -97,7 +97,7 @@ This module deletes the temporary directory (pdf_input/tmp_txt) used during proc
 
 **Main function:**
 
-+delete_temp_files(): Deletes the temporary directory if it exists. Prints a message indicating whether the directory was deleted or if it was not found.
++ delete_temp_files(): Deletes the temporary directory if it exists. Prints a message indicating whether the directory was deleted or if it was not found.
 
 # Notes
 
