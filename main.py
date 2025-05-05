@@ -2,6 +2,8 @@ import os  # manipuler les chemins de fichiers et répertoires
 import shutil   # opérations sur des fichiers/dossiers
 import subprocess   # exécuter des commandes externes (les .exe)
 
+import argparse
+
 from generation import *
 from extraction import *
 from deleteTmp import *
@@ -69,12 +71,30 @@ def final_treatement():
                 f.write(extracted_title + "\n")
                 f.write(extracted_abstract + "\n")
 
-def main():
-    clean_and_prepare_dirs()
-    convert_pdf_to_text()
+
+def txt_parse():
+    clean_and_prepare_dirs()  # Préparer les dossiers de sortie
+    convert_pdf_to_text() 
     final_treatement()
-    print("\nTraitement terminé. Fichiers finaux disponibles dans 'final_output/'.")
-    delete_temp_files()  # Supprimer les fichiers temporaires après traitement
+    print("\nTraitement terminé. Fichiers finaux disponibles dans 'sorties/'.")
+    delete_temp_files()
+
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-t", action="store_true", help="Convertir les fichiers PDF en texte et extraire les informations.")
+    parser.add_argument("-x", action="store_true", help="Convertir les fichiers PDF en XML et extraire les informations.")
+    
+    args = parser.parse_args()
+
+    if args.t:
+        txt_parse()
+    elif args.x:
+        "extraction"  # TODO: implémentation xml
+        print("Extraction XML non implémentée.")
+    else:
+        print("Aucune option spécifiée. Utilisez -t pour le traitement texte ou -x pour le traitement XML.")
 
 if __name__ == "__main__":
     main()
