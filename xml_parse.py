@@ -22,6 +22,7 @@ def generate_article_xml(preamble, titre, auteur, abstract, biblio, output_path)
 
     print(f"Fichier XML bien formaté généré : {output_path}")
 
+"""
 if __name__ == "__main__":
     # Exemple d'exécution sur les variables déjà récupérées de vos codes
     preamble = "sample_paper.pdf"
@@ -32,3 +33,4 @@ if __name__ == "__main__":
     output_path = "article_sample.xml"
 
     generate_article_xml(preamble, titre, auteur, abstract, biblio, output_path)
+"""
