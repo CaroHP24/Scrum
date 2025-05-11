@@ -22,7 +22,7 @@ The system takes as input a folder containing PDF files and creates an output fo
 
 ## Installation
 
-To push an existing repository from the command line:
+Clone the repository:
 
 ```bash
 git remote add origin git@github.com:CaroHP24/Scrum.git
