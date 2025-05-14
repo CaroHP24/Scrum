@@ -2,6 +2,9 @@ import os  # manipuler les chemins de fichiers et répertoires
 import shutil   # opérations sur des fichiers/dossiers
 import subprocess   # exécuter des commandes externes (les .exe)
 
+import tkinter as tk  # interface graphique
+from tkinter import filedialog  # boîte de dialogue pour sélectionner des fichiers
+
 import argparse
 import re
 
@@ -29,17 +32,20 @@ def clean_and_prepare_dirs():
 
 # ========== CONVERSION PDF --> TEXTE ==========
 def convert_pdf_to_text():
-    pdf_files = [
-        f for f in os.listdir(PDF_INPUT_DIR)
-        if f.lower().endswith(".pdf") and not f.startswith("tmp_txt")
-    ]
+    # Ouvre une popup pour sélectionner les fichiers PDF
+    root = tk.Tk()
+    root.withdraw()  # Ne pas afficher la fenêtre principale
+    pdf_paths = filedialog.askopenfilenames(
+        title="Sélectionnez les fichiers PDF",
+        filetypes=[("Fichiers PDF", "*.pdf")]
+    )
 
-    if not pdf_files:
-        print(" Aucun fichier PDF trouvé.")
+    if not pdf_paths:
+        print("Aucun fichier PDF sélectionné.")
         return []
 
-    for pdf_file in pdf_files:
-        pdf_path = os.path.join(PDF_INPUT_DIR, pdf_file)
+    for pdf_path in pdf_paths:
+        pdf_file = os.path.basename(pdf_path)
         txt_name = os.path.splitext(pdf_file)[0] + ".txt"
         txt_path = os.path.join(TMP_TXT_DIR, txt_name)
 
@@ -48,6 +54,7 @@ def convert_pdf_to_text():
             print(f"Converti : {pdf_file}")
         except subprocess.CalledProcessError as e:
             print(f"Erreur de conversion pour {pdf_file} : {e}")
+
 
 # ========== VERSIONS FINALES ==========
 def final_treatement():
