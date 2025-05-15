@@ -9,6 +9,8 @@ def generate_article_xml(preamble, titre, auteur, abstract, biblio, output_path)
     ET.SubElement(article, "titre").text = titre
     ET.SubElement(article, "auteur").text = auteur
     ET.SubElement(article, "abstract").text = abstract
+    ET.SubElement(article, "corps").text = corps
+    ET.SubElement(article, "discussion").text = discussion
     ET.SubElement(article, "biblio").text = biblio
 
     # Convertir en string puis le reformater avec minidom pour pretty-print, chaque ligne seule, pas d'encombrement
