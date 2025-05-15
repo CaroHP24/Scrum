@@ -45,9 +45,9 @@ sudo apt-get install poppler-utils  # For the pdftotext utility
 ## Project Structure
 
 ```text
-├── extraction.py        # Title, author, abstract, and references extraction
+├── extraction.py        # Title, author, abstract, introduction, conclusion and references extraction
 ├── extract_corps.py     # Extraction of the main body of the article
-├── extract_discussion.py# Extraction of introduction, discussion, and conclusion sections
+├── extract_discussion.py# Extraction of discussion section
 ├── generation.py        # Creation of formatted output files (TXT/XML)
 ├── deleteTmp.py         # Deletes the temporary directory used during processing
 ├── xml_parse.py         # XML generation functionality
@@ -133,7 +133,9 @@ These modules analyze text files to extract relevant information.
 * `extract_abstract()`: Extracts the article abstract
 * `extract_references()`: Extracts bibliography/references
 * `extract_corps()`: Extracts the main body of the article
-* `extract_introduction()`, `extract_discussion()`, `extract_conclusion()`: Extract corresponding sections
+* `extract_introduction()`: Extract introduction section
+* `extract_discussion()`: Extract discussion section
+* `extract_conclusion()`: Extract conclusion section
 
 3. **Output File Generation (generation.py)**
 
