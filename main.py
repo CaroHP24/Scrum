@@ -109,7 +109,7 @@ def main():
             auteur = sanitize_xml_text(extract_authors(lines))
             abstract = sanitize_xml_text(extract_abstract(lines))
             biblio = sanitize_xml_text(extract_references(lines))
-            corps=sanitize_xml_text(extract_corps((lines))
+            corps= sanitize_xml_text(extract_corps((lines))
             discussion = sanitize_xml_text(extract_discussion((lines))
 
             generate_article_xml(
