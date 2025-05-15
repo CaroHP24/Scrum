@@ -171,4 +171,3 @@ This module deletes the temporary directory (`pdf_input/tmp_txt`) used during pr
 
 This project was developed using the SCRUM agile methodology. Each version is available in a dedicated branch on GitHub.
 
-```
