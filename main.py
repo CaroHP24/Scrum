@@ -11,6 +11,8 @@ import re
 from generation import *
 from extraction import *
 from deleteTmp import *
+from extract_corps import *
+from extract_discussion import *
 
 def sanitize_xml_text(text):
     if not text:
@@ -107,6 +109,8 @@ def main():
             auteur = sanitize_xml_text(extract_authors(lines))
             abstract = sanitize_xml_text(extract_abstract(lines))
             biblio = sanitize_xml_text(extract_references(lines))
+            corps=sanitize_xml_text(extract_corps((lines))
+            discussion = sanitize_xml_text(extract_discussion((lines))
 
             generate_article_xml(
                 preamble=pdf_filename,
@@ -114,6 +118,8 @@ def main():
                 auteur=auteur,
                 abstract=abstract,
                 biblio=biblio,
+                corps=corps,
+                discussion=discussion,
                 output_path=chemin_sortie
             )
 
