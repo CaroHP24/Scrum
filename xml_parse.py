@@ -2,14 +2,16 @@ import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 
 
-def generate_article_xml(preamble, titre, auteur, abstract, biblio, output_path):
+def generate_article_xml(preamble, titre, auteur, abstract,intro,corps,conclusion,discussion, biblio, output_path):
     article = ET.Element("article")
 
     ET.SubElement(article, "preamble").text = preamble
     ET.SubElement(article, "titre").text = titre
     ET.SubElement(article, "auteur").text = auteur
     ET.SubElement(article, "abstract").text = abstract
+    ET.SubElement(article, "introduction").text = intro
     ET.SubElement(article, "corps").text = corps
+    ET.SubElement(article, "conclusion").text = conclusion
     ET.SubElement(article, "discussion").text = discussion
     ET.SubElement(article, "biblio").text = biblio
 

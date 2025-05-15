@@ -1,4 +1,3 @@
-import extraction_v4
 import re
 from collections import defaultdict
 

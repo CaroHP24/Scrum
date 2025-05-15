@@ -109,19 +109,24 @@ def main():
             auteur = sanitize_xml_text(extract_authors(lines))
             abstract = sanitize_xml_text(extract_abstract(lines))
             biblio = sanitize_xml_text(extract_references(lines))
-            corps= sanitize_xml_text(extract_corps((lines))
-            discussion = sanitize_xml_text(extract_discussion((lines))
+            corps= sanitize_xml_text(extract_corps((lines)))
+            discussion = sanitize_xml_text(extract_discussion((lines)))
+            intro = sanitize_xml_text(extract_introduction((lines)))
+            conclusion = sanitize_xml_text(extract_conclusion((lines)))
 
             generate_article_xml(
-                preamble=pdf_filename,
-                titre=titre,
-                auteur=auteur,
-                abstract=abstract,
-                biblio=biblio,
-                corps=corps,
-                discussion=discussion,
-                output_path=chemin_sortie
+                pdf_filename,
+                titre,
+                auteur,
+                abstract,
+                intro,
+                corps,
+                conclusion,
+                discussion,
+                biblio,
+                chemin_sortie
             )
+
 
         print("\nExtraction XML terminée. Fichiers disponibles dans 'final_output/'.")
         delete_temp_files()
