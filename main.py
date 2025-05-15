@@ -105,8 +105,9 @@ def main():
             with open(txt_path, "r", encoding="utf-8") as f:
                 lines = f.readlines()
 
-            titre = sanitize_xml_text(extract_title(lines))
-            auteur = sanitize_xml_text(extract_authors(lines))
+            titre = extract_title(lines)
+            auteur = sanitize_xml_text(extract_authors(lines,titre))
+            titre = sanitize_xml_text(titre)
             abstract = sanitize_xml_text(extract_abstract(lines))
             biblio = sanitize_xml_text(extract_references(lines))
             corps= sanitize_xml_text(extract_corps((lines)))
