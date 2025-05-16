@@ -57,6 +57,20 @@ def convert_pdf_to_text():
         except subprocess.CalledProcessError as e:
             print(f"Erreur de conversion pour {pdf_file} : {e}")
 
+def extract_title_from_file(file_path):
+    with open(file_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    title = extract_title(lines)
+    return title
+
+def extract_abstract_from_file(file_path):
+    with open(file_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    abstract = extract_abstract(lines)
+    return abstract
+
 
 # ========== VERSIONS FINALES ==========
 def final_treatement():
